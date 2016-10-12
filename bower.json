@@ -1,0 +1,19 @@
+{
+  "name": "getpayever.com",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "marionette#^3.0.0",
+    "coffee-script": "coffeescript#^1.11.1"
+  }
+}

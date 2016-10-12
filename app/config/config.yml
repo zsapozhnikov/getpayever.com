@@ -38,7 +38,7 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   pdo_mysql
+        driver:   "%database_driver%"
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
@@ -57,6 +57,12 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+# Migrations
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations/Default"
+    namespace: Application\Migrations\Base
+    table_name: migration_versions
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -64,3 +70,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# DIC wiring through annotations
+jms_di_extra:
+    locations:
+        all_bundles: false
+        directories: ["%kernel.root_dir%/../src"]
